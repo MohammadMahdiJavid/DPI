@@ -5,8 +5,8 @@ import dpkt
 import datetime
 import socket
 import itertools
-from .models.connection import Connection
-from .models.packet import Packet
+from models.packet import Packet
+from models.stream import Stream
 
 
 def parse_tcp(ip):
@@ -138,6 +138,7 @@ def parse_packets(pcap):
     # iterate through each packet in the pcap file
     for timestamp, buf in pcap:  # timestamp, buffer
         packet = Packet.extract_create_packet(timestamp, buf)
+        Stream.add_packet(packet)
 
 
 def get_file_path():
