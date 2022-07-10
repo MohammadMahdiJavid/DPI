@@ -1,5 +1,6 @@
-#!./dpi_env/Scripts/python
+#!.\dpi_env\Scripts\Activate.ps1 && python main.py -r example.pcap
 import sys
+import os
 import dpkt
 import datetime
 import socket
@@ -139,12 +140,23 @@ def get_file_path():
         python main.py - r example.pcap
         it returns the example.pcap file path from packets directory
     '''
-    default_file = r'./packets/randpkt-2016-10-02-27241.pcap'
+    default_file = None
+    # default_file = r'./packets/randpkt-2016-10-02-27241.pcap'
     # default_file = r'./packets/my_capture_1.pcap'
     # default_file = r'./packets/my_capture_4.pcap'
     # default_file = r'./packets/randpkt-2020-09-06-16170.pcap'
     # default_file = r'./packets/MyCaptureDumpcap.pcap'
-    file_path = sys.argv[-1] if sys.argc > 2 else default_file
+    file_path = default_file
+    if '-r' in sys.argv:
+        in_packets_dir = os.path.join('packets', sys.argv[-1])
+        # if the file is in the current directory
+        if os.path.exists(sys.argv[-1]):
+            file_path = sys.argv[-1]
+        # if the file is in the packets directory
+        elif os.path.exists(in_packets_dir):
+            file_path = in_packets_dir
+        else:
+            print("the file is not in the current directory or packets directory")
     return file_path
 
 
