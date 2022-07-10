@@ -7,7 +7,7 @@ import itertools
 
 
 class Packet():
-    def __init__(self, src, srcp, dst, dstp, protocol_type, timestamp, eth):
+    def __init__(self, src, srcp, dst, dstp, protocol_type, timestamp, eth, buf):
         '''
         src: Source IP Address
         srcp: Source Port number
@@ -17,6 +17,7 @@ class Packet():
         Frame Number shows the order of the packets
         timestamp: Time when the packet is captured
         ethernet: Ethernet of the frame
+        buffer: Buffer of the frame
         '''
         self.src = src
         self.srcp = srcp
@@ -32,6 +33,7 @@ class Packet():
                                        self.dstp,
                                        self.type,)
                                       )
+        self.buffer = buf
 
     def __eq__(self, __o: object):
         return self.five_tuple == __o.five_tuple and \
@@ -48,7 +50,7 @@ class Packet():
         srcp = protocol.sport
         dstp = protocol.dport
         protocol_type = protocol.__class__.__name__
-        return cls(src=src, srcp=srcp, dst=dst, dstp=dstp, protocol_type=protocol_type, timestamp=timestamp, eth=eth)
+        return cls(src=src, srcp=srcp, dst=dst, dstp=dstp, protocol_type=protocol_type, timestamp=timestamp, eth=eth, buf=buf)
 
     @property
     def five_tuple(self):

@@ -139,6 +139,7 @@ def parse_packets(pcap):
     for timestamp, buf in pcap:  # timestamp, buffer
         packet = Packet.extract_create_packet(timestamp, buf)
         Stream.add_packet(packet)
+    Stream.pprint()
 
 
 def get_file_path():

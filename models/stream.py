@@ -3,11 +3,27 @@ class Stream():
     count = 0
 
     def __init__(self, packet=None):
+        '''
+        __packets: contains all packets in the stream
+        __five_tuple: contains the five tuple of the stream which is five tuple of the first packet
+        index: contains the index of the stream
+        src_pkt: contains the first packet in the stream 
+            --> can give us source and destination IP and timestamp
+        sbytes: sent bytes of the stream
+        rbytes: received bytes of the stream
+        spkts: sent packets of the stream
+        rpkts: received packets of the stream
+        '''
+        self.src_pkt = packet
         self.__packets = [] if packet is None else [packet]
         self.__five_tuple = None if packet is None else packet.five_tuple
         Stream.streams[self.__five_tuple] = self
         self.index = Stream.count
         Stream.count = Stream.count + 1
+        self.sbytes = 0
+        self.rbytes = 0
+        self.spkts = 0
+        self.rpkts = 0
 
     @property
     def packets(self):
@@ -53,3 +69,7 @@ class Stream():
 
     def __hash__(self):
         return hash(self.__five_tuple)
+
+    @classmethod
+    def pprint(cls):
+        pass
