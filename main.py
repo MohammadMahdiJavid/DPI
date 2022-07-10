@@ -5,6 +5,8 @@ import dpkt
 import datetime
 import socket
 import itertools
+from .models.connection import Connection
+from .models.packet import Packet
 
 
 def parse_tcp(ip):
@@ -95,7 +97,7 @@ def parse_ip(eth):
     return True, ip  # this packet contains IP data
 
 
-def parse_packets(pcap):
+def parse_packets2(pcap):
     '''
     Print out information about each packet in a pcap
     Args:
@@ -130,6 +132,12 @@ def parse_packets(pcap):
         print('IP: %s -> %s   (len=%d ttl=%d DF=%d MF=%d offset=%d)' %
               (dpkt.utils.inet_to_str(ip.src), dpkt.utils.inet_to_str(ip.dst), ip.len,
                ip.ttl, do_not_fragment, more_fragments, fragment_offset))
+
+
+def parse_packets(pcap):
+    # iterate through each packet in the pcap file
+    for timestamp, buf in pcap:  # timestamp, buffer
+        packet = Packet.extract_create_packet(timestamp, buf)
 
 
 def get_file_path():
