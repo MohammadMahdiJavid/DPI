@@ -123,7 +123,7 @@ class Stream():
                     f'sent packets: {stream.spkts}, received packets: {stream.rpkts}, '
                     f'sent bytes: {stream.sbytes}, received bytes: {stream.rbytes}, '
                     f'timestamp: ({datetime.datetime.fromtimestamp(stream.src_pkt.timestamp)}, '
-                    f'{datetime.datetime.fromtimestamp(last_pkt.timestamp)}) ' +
+                    f'{datetime.datetime.fromtimestamp(last_pkt.timestamp)})' +
                     f'\n' * 2
                 )
                 print(output, end='')
