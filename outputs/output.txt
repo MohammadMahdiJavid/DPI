@@ -1,0 +1,96 @@
+### flow number 0   ### five tuple: 43327,10.42.0.184,143.204.11.14,443,TCP
+10.42.0.184, 43327 --> 143.204.11.14, 443: TCP: UNKNOWN; sent packets: 5, received packets: 12, sent bytes: 1088, received bytes: 11485, timestamp: (2020-06-20 09:43:39.957123, 2020-06-20 09:43:40.389009) 
+
+### flow number 1   ### five tuple: 142.250.184.234,36147,UDP,10.42.0.142,443
+10.42.0.142, 36147 --> 142.250.184.234, 443: UDP: UNKNOWN; sent packets: 43, received packets: 46, sent bytes: 5015, received bytes: 21600, timestamp: (2021-07-17 17:33:38.195314, 2021-07-17 17:34:02.615944) 
+
+### flow number 2   ### five tuple: 10.42.0.1,UDP,10.42.0.196,53,51673
+10.42.0.196, 51673 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 32, received bytes: 71, timestamp: (2021-10-12 11:52:22.357645, 2021-10-12 11:52:22.628757) 
+
+### flow number 3   ### five tuple: 10.42.0.1,10.42.0.196,UDP,53,10010
+10.42.0.196, 10010 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 41, received bytes: 41, timestamp: (2021-10-12 11:52:22.563103, 2021-10-12 11:52:22.996144) 
+
+### flow number 4   ### five tuple: 54275,10.42.0.1,UDP,10.42.0.196,53
+10.42.0.196, 54275 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 41, received bytes: 41, timestamp: (2021-10-12 11:52:22.563164, 2021-10-12 11:52:22.996135) 
+
+### flow number 5   ### five tuple: 5222,38576,10.42.0.196,31.13.64.53,TCP
+10.42.0.196, 38576 --> 31.13.64.53, 5222: TCP: UNKNOWN; sent packets: 23, received packets: 29, sent bytes: 1993, received bytes: 6303, timestamp: (2021-10-12 11:52:22.867709, 2021-10-12 11:52:46.584599) 
+
+### flow number 6   ### five tuple: 10.42.0.1,57069,UDP,10.42.0.196,53
+10.42.0.196, 57069 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 37, received bytes: 77, timestamp: (2021-10-12 11:52:22.738011, 2021-10-12 11:52:23.030484) 
+
+### flow number 7   ### five tuple: 10.42.0.1,28844,UDP,10.42.0.196,53
+10.42.0.196, 28844 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 34, received bytes: 98, timestamp: (2021-10-12 11:52:22.738301, 2021-10-12 11:52:23.012756) 
+
+### flow number 8   ### five tuple: 10.42.0.1,10.42.0.196,UDP,53,12764
+10.42.0.1, 53 --> 10.42.0.196, 12764: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 41, received bytes: 41, timestamp: (2021-10-12 11:52:22.996104, 2021-10-12 11:52:22.997036) 
+
+### flow number 9   ### five tuple: 10.42.0.1,UDP,10.42.0.196,53,60060
+10.42.0.196, 53 --> 10.42.0.1, 60060: UDP: UNKNOWN; sent packets: 2, received packets: 1, sent bytes: 82, received bytes: 41, timestamp: (2021-10-12 11:52:38.800382, 2021-10-12 11:52:38.799139) 
+
+### flow number 10   ### five tuple: 10.42.0.1,UDP,41460,10.42.0.196,53
+10.42.0.196, 53 --> 10.42.0.1, 41460: UDP: UNKNOWN; sent packets: 3, received packets: 1, sent bytes: 123, received bytes: 41, timestamp: (2021-10-12 11:52:38.801394, 2021-10-12 11:52:38.799222) 
+
+### flow number 11   ### five tuple: 10.42.0.1,50227,UDP,10.42.0.196,53
+10.42.0.196, 53 --> 10.42.0.1, 50227: UDP: UNKNOWN; sent packets: 3, received packets: 1, sent bytes: 123, received bytes: 41, timestamp: (2021-10-12 11:52:38.801434, 2021-10-12 11:52:38.799238) 
+
+### flow number 12   ### five tuple: 31776,10.42.0.1,UDP,10.42.0.196,53
+10.42.0.196, 53 --> 10.42.0.1, 31776: UDP: UNKNOWN; sent packets: 2, received packets: 1, sent bytes: 82, received bytes: 41, timestamp: (2021-10-12 11:52:44.051056, 2021-10-12 11:52:44.049791) 
+
+### flow number 13   ### five tuple: 42881,216.239.35.4,10.42.0.196,UDP,123
+10.42.0.196, 42881 --> 216.239.35.4, 123: UDP: UNKNOWN; sent packets: 1, received packets: 0, sent bytes: 48, received bytes: 0, timestamp: (2021-10-12 11:52:23.017805, 2021-10-12 11:52:23.017805) 
+
+### flow number 14   ### five tuple: 142.250.185.46,80,10.42.0.196,39606,TCP
+10.42.0.196, 39606 --> 142.250.185.46, 80: TCP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 185, received bytes: 83, timestamp: (2021-10-12 11:52:23.111073, 2021-10-12 11:52:23.221048) 
+
+### flow number 15   ### five tuple: 31.13.64.50,43539,10.42.0.196,UDP,3478
+10.42.0.196, 43539 --> 31.13.64.50, 3478: UDP: UNKNOWN; sent packets: 58, received packets: 58, sent bytes: 7012, received bytes: 6317, timestamp: (2021-10-12 11:52:28.311391, 2021-10-12 11:52:43.431788) 
+
+### flow number 16   ### five tuple: 31.13.86.48,37234,10.42.0.196,UDP,3478
+10.42.0.196, 37234 --> 31.13.86.48, 3478: UDP: UNKNOWN; sent packets: 5, received packets: 4, sent bytes: 948, received bytes: 272, timestamp: (2021-10-12 11:52:28.313906, 2021-10-12 11:52:43.425569) 
+
+### flow number 17   ### five tuple: 44785,10.42.0.196,UDP,3478,157.240.201.62
+10.42.0.196, 44785 --> 157.240.201.62, 3478: UDP: UNKNOWN; sent packets: 5, received packets: 4, sent bytes: 948, received bytes: 272, timestamp: (2021-10-12 11:52:28.318565, 2021-10-12 11:52:43.425586) 
+
+### flow number 18   ### five tuple: 40397,10.42.0.196,UDP,185.60.216.51,3478
+10.42.0.196, 40397 --> 185.60.216.51, 3478: UDP: UNKNOWN; sent packets: 5, received packets: 4, sent bytes: 948, received bytes: 272, timestamp: (2021-10-12 11:52:28.318684, 2021-10-12 11:52:43.425599) 
+
+### flow number 19   ### five tuple: 31.13.84.48,UDP,10.42.0.196,3478,46653
+10.42.0.196, 46653 --> 31.13.84.48, 3478: UDP: UNKNOWN; sent packets: 5, received packets: 4, sent bytes: 948, received bytes: 272, timestamp: (2021-10-12 11:52:28.320630, 2021-10-12 11:52:43.425608) 
+
+### flow number 20   ### five tuple: 10.42.0.1,45775,UDP,10.42.0.196,53
+10.42.0.196, 45775 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 37, received bytes: 53, timestamp: (2021-10-12 11:52:28.524510, 2021-10-12 11:52:28.701928) 
+
+### flow number 21   ### five tuple: 10.42.0.1,UDP,10.42.0.196,53,56693
+10.42.0.196, 56693 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 2, received packets: 1, sent bytes: 82, received bytes: 41, timestamp: (2021-10-12 11:52:33.058624, 2021-10-12 11:52:38.799208) 
+
+### flow number 22   ### five tuple: 10.42.0.1,UDP,10.42.0.196,53,10238
+10.42.0.196, 10238 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 45, received bytes: 61, timestamp: (2021-10-12 11:52:35.085362, 2021-10-12 11:52:35.261389) 
+
+### flow number 23   ### five tuple: 10.42.0.1,9485,UDP,10.42.0.196,53
+10.42.0.196, 9485 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 40, received bytes: 85, timestamp: (2021-10-12 11:52:36.381517, 2021-10-12 11:52:36.450370) 
+
+### flow number 24   ### five tuple: 55072,37859,21.39.237.198,10.42.0.196,UDP
+10.42.0.196, 37859 --> 21.39.237.198, 55072: UDP: UNKNOWN; sent packets: 12, received packets: 0, sent bytes: 528, received bytes: 0, timestamp: (2021-10-12 11:52:36.705030, 2021-10-12 11:52:43.320273) 
+
+### flow number 25   ### five tuple: 5.114.242.145,32525,46577,UDP,10.42.0.196
+10.42.0.196, 46577 --> 5.114.242.145, 32525: UDP: UNKNOWN; sent packets: 12, received packets: 0, sent bytes: 528, received bytes: 0, timestamp: (2021-10-12 11:52:36.796733, 2021-10-12 11:52:43.420220) 
+
+### flow number 26   ### five tuple: 10.42.0.1,UDP,10.42.0.196,53,32696
+10.42.0.196, 32696 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 41, received bytes: 41, timestamp: (2021-10-12 11:52:38.014183, 2021-10-12 11:52:38.799182) 
+
+### flow number 27   ### five tuple: 10.42.0.1,10.42.0.196,UDP,53,9402
+10.42.0.196, 9402 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 2, received packets: 1, sent bytes: 82, received bytes: 41, timestamp: (2021-10-12 11:52:38.809823, 2021-10-12 11:52:44.049889) 
+
+### flow number 28   ### five tuple: 10.42.0.196,47092,UDP,216.239.35.12,123
+10.42.0.196, 47092 --> 216.239.35.12, 123: UDP: UNKNOWN; sent packets: 1, received packets: 0, sent bytes: 48, received bytes: 0, timestamp: (2021-10-12 11:52:43.129144, 2021-10-12 11:52:43.129144) 
+
+### flow number 29   ### five tuple: 44136,10.42.0.1,UDP,10.42.0.196,53
+10.42.0.196, 44136 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 1, sent bytes: 41, received bytes: 41, timestamp: (2021-10-12 11:52:43.806246, 2021-10-12 11:52:44.049851) 
+
+### flow number 30   ### five tuple: 10.42.0.1,UDP,10.42.0.196,53,33311
+10.42.0.196, 33311 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 0, sent bytes: 41, received bytes: 0, timestamp: (2021-10-12 11:52:44.051778, 2021-10-12 11:52:44.051778) 
+
+### flow number 31   ### five tuple: 10.42.0.1,UDP,10.42.0.196,53,46648
+10.42.0.196, 46648 --> 10.42.0.1, 53: UDP: UNKNOWN; sent packets: 1, received packets: 0, sent bytes: 41, received bytes: 0, timestamp: (2021-10-12 11:52:44.051887, 2021-10-12 11:52:44.051887) 
+

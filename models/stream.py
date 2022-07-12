@@ -103,16 +103,28 @@ class Stream():
 
     @classmethod
     def pprint(cls):
-        for five_tuple, stream in cls.streams.items():
-            last_pkt = stream.packets[-1]
-            print(f'### flow number {stream.index}')
-            print(
-                f'{stream.src_pkt.src_ip}, {stream.src_pkt.srcp} --> \
-                {stream.src_pkt.dst_ip}, {stream.src_pkt.dstp}: \
-                {stream.src_pkt.type}: {stream.src_pkt.protocol}; \
-                sent packetsL {stream.spkts}, received packets: {stream.rpkts}, \
-                sent bytes: {stream.sbytes}, received bytes: {stream.rbytes}, \
-                timestamp: ({datetime.datetime.fromtimestamp(stream.src_pkt.timestamp)}, \
-                {datetime.datetime.fromtimestamp(last_pkt.timestamp)}) \
-                \n'
-            )
+        '''
+        print the stream and their packet information pretty to the console
+        save the packets' information in the output.txt file in outputs directory
+        '''
+        if not os.path.exists('outputs'):
+            os.mkdir('outputs')
+        with open('outputs/output.txt', 'w') as file:
+            for five_tuple, stream in cls.streams.items():
+                last_pkt = stream.packets[-1]
+                output = (
+                    f'### flow number {stream.index}' +
+                    ' ' * 3 +
+                    f'### five tuple: {",".join([str(item) for item in five_tuple])}'
+                    '\n'
+                    f'{stream.src_pkt.src_ip}, {stream.src_pkt.srcp} --> '
+                    f'{stream.src_pkt.dst_ip}, {stream.src_pkt.dstp}: '
+                    f'{stream.src_pkt.type}: {stream.src_pkt.protocol}; '
+                    f'sent packets: {stream.spkts}, received packets: {stream.rpkts}, '
+                    f'sent bytes: {stream.sbytes}, received bytes: {stream.rbytes}, '
+                    f'timestamp: ({datetime.datetime.fromtimestamp(stream.src_pkt.timestamp)}, '
+                    f'{datetime.datetime.fromtimestamp(last_pkt.timestamp)}) ' +
+                    f'\n' * 2
+                )
+                print(output, end='')
+                file.write(output)
