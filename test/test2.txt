@@ -1,0 +1,26 @@
+### flow number 23   ### five tuple: 55072,37859,21.39.237.198,10.42.0.196,UDP
+10.42.0.196, 37859 --> 21.39.237.198, 55072: UDP: STUN; sent packets: 12, received packets: 0, sent bytes: 528, received bytes: 0, timestamp: (2021-10-12 11:52:36.705030, 2021-10-12 11:52:43.320273)
+
+### flow number 24   ### five tuple: 5.114.242.145,32525,46577,10.42.0.196,UDP
+10.42.0.196, 46577 --> 5.114.242.145, 32525: UDP: STUN; sent packets: 12, received packets: 0, sent bytes: 528, received bytes: 0, timestamp: (2021-10-12 11:52:36.796733, 2021-10-12 11:52:43.420220)
+
+### flow number 25   ### five tuple: 10.42.0.1,53,32696,10.42.0.196,UDP
+10.42.0.196, 32696 --> 10.42.0.1, 53: UDP: DNS; sent packets: 1, received packets: 1, sent bytes: 41, received bytes: 41, timestamp: (2021-10-12 11:52:38.014183, 2021-10-12 11:52:38.799182)
+
+### flow number 26   ### five tuple: 31776,10.42.0.1,53,10.42.0.196,UDP
+10.42.0.196, 31776 --> 10.42.0.1, 53: UDP: DNS; sent packets: 1, received packets: 1, sent bytes: 41, received bytes: 41, timestamp: (2021-10-12 11:52:38.801783, 2021-10-12 11:52:44.049791)
+
+### flow number 27   ### five tuple: 10.42.0.1,53,9402,10.42.0.196,UDP
+10.42.0.196, 9402 --> 10.42.0.1, 53: UDP: DNS; sent packets: 2, received packets: 1, sent bytes: 82, received bytes: 41, timestamp: (2021-10-12 11:52:38.809823, 2021-10-12 11:52:44.049889)
+
+### flow number 28   ### five tuple: 216.239.35.12,47092,123,10.42.0.196,UDP
+10.42.0.196, 47092 --> 216.239.35.12, 123: UDP: DNS; sent packets: 1, received packets: 0, sent bytes: 48, received bytes: 0, timestamp: (2021-10-12 11:52:43.129144, 2021-10-12 11:52:43.129144)
+
+### flow number 29   ### five tuple: 10.42.0.1,44136,53,10.42.0.196,UDP
+10.42.0.196, 44136 --> 10.42.0.1, 53: UDP: DNS; sent packets: 1, received packets: 1, sent bytes: 41, received bytes: 41, timestamp: (2021-10-12 11:52:43.806246, 2021-10-12 11:52:44.049851)
+
+### flow number 30   ### five tuple: 10.42.0.1,33311,53,10.42.0.196,UDP
+10.42.0.196, 33311 --> 10.42.0.1, 53: UDP: DNS; sent packets: 1, received packets: 0, sent bytes: 41, received bytes: 0, timestamp: (2021-10-12 11:52:44.051778, 2021-10-12 11:52:44.051778)
+
+### flow number 31   ### five tuple: 10.42.0.1,53,46648,10.42.0.196,UDP
+10.42.0.196, 46648 --> 10.42.0.1, 53: UDP: DNS; sent packets: 1, received packets: 0, sent bytes: 41, received bytes: 0, timestamp: (2021-10-12 11:52:44.051887, 2021-10-12 11:52:44.051887)
