@@ -12,8 +12,9 @@ class Packet():
     patterns = {  # byte string object patterns to find out which protocol is used
         rb"^.{4}\x21\x12\xa4\x42": ('UDP', 'STUN'),
         rb'^\x16\x03[\x00-\x03].{2}\x01': ('TCP', 'TLS'),
-        rb'^(.{2}[\x00-\x01][\x00\x10\x20\x30].{2}\x00{2}.{4}|.{2}[\x10-\x11][\x00\x10\x20\x30]\x00{2}.{2}.{4})': ('UDP', 'DNS'),
-        rb'^(GET|POST|HEAD|PUT|DELETE|OPTIONS|TRACE) .{0, 5000}HTTP\/1\.(0|1)(|\x0d)\x0a': ('TCP', 'HTTP'),
+        # rb'^(.{2}[\x00-\x01][\x00\x10\x20\x30].{2}\x00{2}.{4}|.{2}[\x10-\x11][\x00\x10\x20\x30]\x00{2}.{2}.{4})': ('UDP', 'DNS'),
+        rb'^.{4}\x00[\x01-\x0f]\x00.{5}': ('UDP', 'DNS'),
+        rb'^(GET|POST|HEAD|PUT|DELETE|OPTIONS|TRACE) .{0,5000}HTTP\/1\.(0|1)(|\x0d)\x0a': ('TCP', 'HTTP'),
     }
 
     def __init__(self, src_ip, src_port, dst_ip, dst_port, segment_type, timestamp, ethernet,
