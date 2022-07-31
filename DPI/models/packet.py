@@ -58,10 +58,6 @@ class Packet():
         return flags
 
     @classmethod
-    def parse_UDP(cls):
-        pass
-
-    @classmethod
     def extract_create_packet(cls, timestamp, buf):
         '''
         extract and create a packet from the buffer
