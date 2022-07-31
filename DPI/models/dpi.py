@@ -15,10 +15,10 @@ class DPI ():
     def __init__(self):
         '''
         '''
-        self.__init_parser__()  # initialize argument parser for the DPI object
+        self.__init_parser()  # initialize argument parser for the DPI object
         self.__file = self.get_file_path()  # get file path from the argument parser
 
-    def __init_parser__(self):
+    def __init_parser(self):
         self.parser = argparse.ArgumentParser(description=f'''
                                         DPI is a program that can be used to analyze packet streams.
                                         use -h or --help to see the help menu
