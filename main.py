@@ -1,4 +1,4 @@
-#!..\dpi_env\Scripts\activate && python main.py -r example.pcap
+#!.\dpi_env\Scripts\activate && python main.py -r example.pcap
 
 '''
 Entry file for the DPI program

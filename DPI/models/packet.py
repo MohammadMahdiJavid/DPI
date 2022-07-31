@@ -76,8 +76,6 @@ class Packet():
             if not has_payload:
                 return  # return None if the packet doesn't have payload
             flags = cls.parse_TCP(segment)
-        elif isinstance(segment, dpkt.udp.UDP):
-            cls.parse_UDP()
         srcp = segment.sport
         dstp = segment.dport
         segment_type = segment.__class__.__name__
