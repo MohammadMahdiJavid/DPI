@@ -65,8 +65,6 @@ class Stream():
         # if this is the first packet added then set the five tuple for Stream
         if not self.__five_tuple and not self.__packets:
             raise Exception("Constructor didn't get a packet")
-            self.__five_tuple = packet.five_tuple
-            self.__packets.append(packet)
         # if the five tuple is the same and the packet is not in the list and the list is not empty
         elif self.__five_tuple == packet.five_tuple:
             self.__packets.append(packet)
@@ -119,7 +117,7 @@ class Stream():
                     '\n'
                     f'{stream.src_pkt.src_ip}, {stream.src_pkt.srcp} --> '
                     f'{stream.src_pkt.dst_ip}, {stream.src_pkt.dstp}: '
-                    f'{stream.src_pkt.type}: {stream.src_pkt.protocol}; '
+                    f'{stream.src_pkt.segment_type}: {stream.src_pkt.app_protocol}; '
                     f'sent packets: {stream.spkts}, received packets: {stream.rpkts}, '
                     f'sent bytes: {stream.sbytes}, received bytes: {stream.rbytes}, '
                     f'timestamp: ({datetime.datetime.fromtimestamp(stream.src_pkt.timestamp)}, '
