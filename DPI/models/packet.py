@@ -103,15 +103,15 @@ class Packet():
         ip: ip packet of the Ethernet
         src: Source IP Address
         dst: Destination IP Address
-        protocol: Protocol of the ip packet
+        segment: segment data of the ip packet: transport layer protocol
         '''
         # Unpack the Ethernet frame (mac src/dst, ethertype)
         eth = dpkt.ethernet.Ethernet(buf)
         ip = eth.data
         src = socket.inet_ntoa(ip.src)
         dst = socket.inet_ntoa(ip.dst)
-        protocol = ip.data
-        return eth, src, dst, protocol, ip
+        segment = ip.data  # transport layer data
+        return eth, src, dst, segment, ip
 
     @property
     def five_tuple(self):
