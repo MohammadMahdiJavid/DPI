@@ -37,9 +37,10 @@ class DPI ():
         '''
         file_path = self.args.file
         # file path in the packets directory
-        in_packets_dir = os.path.join('packets', file_path)
-        if os.path.exists(in_packets_dir):  # if the file is in the packets directory
-            file_path = in_packets_dir
+        in_packets_dir_path = os.path.join('packets', file_path)
+        # if the file is in the packets directory
+        if os.path.exists(in_packets_dir_path):
+            file_path = in_packets_dir_path
         elif os.path.exists(file_path):  # if the file is in the root of the project
             file_path = file_path
         else:
