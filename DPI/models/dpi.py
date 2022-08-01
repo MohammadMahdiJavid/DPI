@@ -19,10 +19,9 @@ class DPI ():
         self.__file = self.get_file_path()  # get file path from the argument parser
 
     def __init_parser(self):
-        self.parser = argparse.ArgumentParser(description=f'''
-                                        DPI is a program that can be used to analyze packet streams.
-                                        use -h or --help to see the help menu
-                                        ''')
+        self.parser = argparse.ArgumentParser(
+            description="DPI is a program that can be used to analyze packet streams.\n\r"
+            "use -h or --help to see the help", formatter_class=argparse.RawTextHelpFormatter)
         self.parser.add_argument(
             '-r', '--read', type=str, required=True, help='read a pcap file', dest='file', metavar='File Path')
         self.args = self.parser.parse_args()
