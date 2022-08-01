@@ -6,9 +6,6 @@ import socket
 import itertools
 from DPI import settings
 
-if settings.DEBUG:
-    from DPI.debug.debugger import Debugger
-
 
 class Packet():
     def __init__(self, src, srcp, dst, dstp, segment_type, timestamp, eth,
@@ -79,10 +76,6 @@ class Packet():
         srcp = segment.sport
         dstp = segment.dport
         segment_type = segment.__class__.__name__
-        if settings.DEBUG:  # if debugger is enabled catch this packet
-            print(f'{src}:{srcp} -> {dst}:{dstp} over {segment_type}')
-            Debugger.catch_debugger(src=src, dst=dst, timestamp=timestamp,
-                                    eth=eth, srcp=srcp, dstp=dstp)
         if has_payload:
             # if it has payload what is it's size (in bytes)
             payload_size = len(segment.data)
