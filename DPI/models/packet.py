@@ -7,12 +7,14 @@ import socket
 import itertools
 from DPI import settings
 
+if settings.DEBUG:
+    from DPI.debug.debugger import Debugger
+
 
 class Packet():
     patterns = {  # byte string object patterns to find out which protocol is used
         rb"^.{4}\x21\x12\xa4\x42": ('UDP', 'STUN'),
         rb'^\x16\x03[\x00-\x03].{2}\x01': ('TCP', 'TLS'),
-        # rb'^(.{2}[\x00-\x01][\x00\x10\x20\x30].{2}\x00{2}.{4}|.{2}[\x10-\x11][\x00\x10\x20\x30]\x00{2}.{2}.{4})': ('UDP', 'DNS'),
         rb'^.{4}\x00[\x01-\x0f]\x00.{5}': ('UDP', 'DNS'),
         rb'^(GET|POST|HEAD|PUT|DELETE|OPTIONS|TRACE) .{0,5000}HTTP\/1\.(0|1)(|\x0d)\x0a': ('TCP', 'HTTP'),
     }
@@ -65,6 +67,8 @@ class Packet():
             261	10.42.0.196	31.13.64.50	UDP	206	4-UDP	UDP	64	12  43539 → stun(3478) Len=164
 
         '''
+        if settings.DEBUG:
+            Debugger.catch_debugger(src=self.src_ip, dst=self.dst_ip)
         # regex pattern, transport layer protocol, application layer protocol
         for pattern, (segment_protocol, app_protocol) in self.__class__.patterns.items():
             if re.search(pattern, self.app_data):
@@ -88,6 +92,8 @@ class Packet():
         '''
         # ethernet frame, source ip, destination ip, segment: ICMP, UDP, TCP: transport layer data
         ethernet, src_ip, dst_ip, ip_payload, ip = cls.parse_base(buffer)
+        if not ip:
+            return
         flags = None
         payload_size = None
         # has data attribute and data payload is not empty
@@ -110,7 +116,7 @@ class Packet():
                    segment_type=segment_type, timestamp=timestamp, ethernet=ethernet,
                    buffer=buffer, payload_size=payload_size, flags=flags, app_data=ip_payload.data)
 
-    @ classmethod
+    @classmethod
     def parse_ICMP(cls, segment):
         app_data = segment.data.data.udp  # application layer protocol of ICMP
         return app_data
@@ -128,6 +134,8 @@ class Packet():
         # Unpack the Ethernet frame (mac src/dst, ethertype)
         ethernet = dpkt.ethernet.Ethernet(buf)
         ip = ethernet.data  # Network Layer data
+        if not isinstance(ip, dpkt.ip.IP):
+            return None, None, None, None, None
         src_ip = socket.inet_ntoa(ip.src)  # source ip
         dst_ip = socket.inet_ntoa(ip.dst)  # destination ip
         ip_payload = ip.data  # transport layer data
