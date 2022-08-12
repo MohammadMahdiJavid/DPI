@@ -3,6 +3,7 @@ import dpkt
 from my_dpi.flow import Flow
 from my_dpi.packet import Packet
 from my_dpi.five_tuple import FiveTuple
+from my_dpi.debug.debugger import Debugger
 
 
 class Worker:
@@ -36,6 +37,8 @@ class Worker:
         # extract 5-tuple of packet
         five_tuple_key, reversed_five_tuple_key = FiveTuple.get_five_tuple_of_packet(
             ip_packet)
+        Debugger.catch_debugger(src=five_tuple_key[0], dst=five_tuple_key[1],
+                                sport=five_tuple_key[3], dport=five_tuple_key[4])
         find_flow_five_tuple_key = five_tuple_key
         is_packet_from_client = True
         # check 5-tuple or its reverse order exist in flows_dict dictionary before
