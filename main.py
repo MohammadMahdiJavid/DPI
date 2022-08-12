@@ -14,8 +14,16 @@ def get_arguments(args):
     Returns:
         _type_: _description_
     """
+
     # Expect somthing like this: python3 main.py -r pcap_file.pcap
-    return ...
+    parser = argparse.ArgumentParser(
+        description="DPI is a program that can be used to analyze packet streams.\n\r"
+        "use -h or --help to see the help", formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(
+        '-r', '--read', type=str, required=True, help='read a pcap file', dest='read_file', metavar='File Path')
+    args = parser.parse_args()
+    args.read_file = os.path.join('packets', args.read_file)
+    return args
 
 
 if __name__ == "__main__":
