@@ -209,7 +209,7 @@ class Quic:
     def __init__(self, my_dpi):
         self.quic_label = 'QUIC'
         my_dpi.register_udp_first_packet_callback(
-            rb'^[\xc0-\xff]\x00\x00\x00\x01',
+            rb'^[\xc0-\xff]\x00{3}\x01',
             self.callback_function
         )
 
