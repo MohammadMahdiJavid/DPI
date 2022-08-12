@@ -1,6 +1,7 @@
 import re
 from my_dpi.module.dns import Dns
 from my_dpi.module.ntp import Ntp
+from my_dpi.module.quic import Quic
 from my_dpi.module.stun import Stun
 from my_dpi.module.tls import Tls
 from my_dpi.module.http import Http
@@ -18,6 +19,7 @@ class MyDpi:
             Tls,
             Http,
             Stun,
+            Quic
         ]
         self.modules_objects = dict()
         for module_name in self.protocols_list:
@@ -51,7 +53,7 @@ class MyDpi:
         """
         for pattern in self.udp_first_packet_patterns_callback_dict:
             # Match (using re library) every regex pattern in udp_first_packet_patterns_callback_dict
-            if not re.match(pattern, application_packet.packet_data):
+            if not re.search(pattern, application_packet.packet_data, re.DOTALL):
                 continue
             # keys with application_packet.packet_data, if it matched call the callback function
             # that previously registered in udp_first_packet_patterns_callback_dict
@@ -70,7 +72,7 @@ class MyDpi:
         """
         for pattern in self.tcp_first_packet_patterns_callback_dict:
             # Similar to feed_udp_first_packet
-            if not re.match(pattern, application_packet.packet_data):
+            if not re.search(pattern, application_packet.packet_data, re.DOTALL):
                 continue
             self.tcp_first_packet_patterns_callback_dict[pattern](
                 flow,

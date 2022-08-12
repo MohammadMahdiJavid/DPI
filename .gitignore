@@ -2824,3 +2824,4 @@ packets/MyCaptureDumpcap.pcap
 photo_2022-07-11_00-32-51.jpg
 packets/file.csv
 DPI/debug/*
+my_dpi/debug/*
