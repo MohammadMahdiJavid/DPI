@@ -36,12 +36,15 @@ class Worker:
         # extract 5-tuple of packet
         five_tuple_key, reversed_five_tuple_key = FiveTuple.get_five_tuple_of_packet(
             ip_packet)
+        find_flow_five_tuple_key = five_tuple_key
         is_packet_from_client = True
         # check 5-tuple or its reverse order exist in flows_dict dictionary before
         if five_tuple_key in self.flows_dict:
-            ...
+            flow = self.flows_dict[five_tuple_key]
         elif reversed_five_tuple_key in self.flows_dict:
-            ...
+            flow = self.flows_dict[reversed_five_tuple_key]
+            is_packet_from_client = not is_packet_from_client
+            find_flow_five_tuple_key = reversed_five_tuple_key
         else:
             flow = Flow(five_tuple_key)
 
@@ -51,7 +54,7 @@ class Worker:
         application_packet = Packet(
             is_packet_from_client, timestamp, application_data)
         flow.update_stats(application_packet)
-        self.flows_dict.update({five_tuple_key: flow})
+        self.flows_dict.update({find_flow_five_tuple_key: flow})
         self.my_dpi.inspect_packet(five_tuple_key, flow, application_packet)
 
     def print_conversation(self):
@@ -59,7 +62,7 @@ class Worker:
         """
         for flow_key in self.flows_dict:
             # Get flow state string from get_state_string function and print it here
-            ...
+            print(self.flows_dict[flow_key].get_state_string())
 
     def executor(self, pcap_file_name):
         """ Read every packet from pcap file
