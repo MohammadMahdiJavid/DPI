@@ -215,8 +215,14 @@ class Quic:
 
     def callback_function(self, flow, application_packet):
         application_packet_data = application_packet.packet_data
-        # QUIC initial packet payload size is 1350
-        if len(application_packet_data) != 1350:
+        '''
+        The payload of a UDP datagram carrying the Initial packet MUST be
+        expanded to at least 1200 octets (see Section 8), by adding PADDING
+        frames to the Initial packet and/or by combining the Initial packet
+        with a 0-RTT packet (see Section 4.6).
+        https://datatracker.ietf.org/doc/html/draft-ietf-quic-transport-13#section-4.4.1.4
+        '''
+        if len(application_packet_data) < 1200:
             return
         # Long Header Check for first packet # Long: 1
         if not (application_packet_data[0] >> 7):
